@@ -1,30 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Blueprint colors */
-  --primary-blue: #2196F3;
-  --primary-blue-hover: #1976D2;
-  --light-blue-bg: #E1F5FE;
-  --dark-navy: #1A237E;
-  --bg-color: #FFFFFF;
-  --text-main: #0D1B2A;
-  --text-muted: #555555;
+  /* Futuristic Light colors */
+  --primary-blue: #2962FF; /* Neon Cyan/Blue hybrid for light mode */
+  --primary-blue-hover: #0039CB;
+  --light-blue-bg: #F0F4F8;
+  --dark-navy: #0B0C10;
+  --bg-color: #F8F9FA;
+  --text-main: #1F2833;
+  --text-muted: #45A29E;
   --yellow-banner: #FFF9C4;
   --card-bg: #FFFFFF;
   --card-border: #E0E0E0;
 }
 
 body.dark {
-  --primary-blue: #29B6F6;
-  --primary-blue-hover: #4FC3F7;
-  --light-blue-bg: #1A237E; /* dark section bg */
-  --dark-navy: #E1F5FE;
-  --bg-color: #0A1128;
-  --text-main: #F0F4F8;
-  --text-muted: #A0AAB2;
+  /* Futuristic Cyberpunk Dark Colors */
+  --primary-blue: #66FCF1; /* Neon Cyan */
+  --primary-blue-hover: #45A29E; /* Muted Teal */
+  --light-blue-bg: #1F2833; /* Dark Gray */
+  --dark-navy: #C5C6C7; /* Light Gray */
+  --bg-color: #0B0C10; /* Deep Space Black */
+  --text-main: #C5C6C7; /* Light Gray */
+  --text-muted: #45A29E; /* Muted Teal */
   --yellow-banner: #FBC02D;
-  --card-bg: #1C2B4B;
-  --card-border: #2C3E6B;
+  --card-bg: #1F2833; /* Dark Gray */
+  --card-border: #0B0C10; /* Deep Space Black */
 }
 
 * {
@@ -99,29 +100,41 @@ h1, h2, h3, h4, h5, h6 {
 
 .card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(33, 150, 243, 0.15);
-  border-color: rgba(33, 150, 243, 0.3);
+  box-shadow: 0 15px 30px rgba(41, 98, 255, 0.15);
+  border-color: rgba(41, 98, 255, 0.3);
 }
 
 body.dark .card:hover {
-  box-shadow: 0 15px 30px rgba(41, 182, 246, 0.15);
+  box-shadow: 0 15px 30px rgba(102, 252, 241, 0.15);
+  border-color: rgba(102, 252, 241, 0.3);
 }
 
 .btn-primary {
   background-color: var(--primary-blue);
-  color: #fff;
+  color: var(--bg-color); /* Contrast color */
   border: none;
   border-radius: 8px;
   padding: 0.75rem 1.5rem;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 4px 6px rgba(33, 150, 243, 0.3);
+  box-shadow: 0 4px 6px rgba(41, 98, 255, 0.3);
+}
+
+body.dark .btn-primary {
+  color: var(--bg-color);
+  box-shadow: 0 4px 6px rgba(102, 252, 241, 0.3);
 }
 
 .btn-primary:hover {
   background-color: var(--primary-blue-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(33, 150, 243, 0.5);
+  box-shadow: 0 8px 15px rgba(41, 98, 255, 0.5);
+}
+
+body.dark .btn-primary:hover {
+  background-color: var(--primary-blue-hover);
+  color: var(--text-main);
+  box-shadow: 0 8px 15px rgba(102, 252, 241, 0.5);
 }
 
 @keyframes fadeInUp {

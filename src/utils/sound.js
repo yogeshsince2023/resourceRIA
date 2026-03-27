@@ -29,7 +29,7 @@ export const playHoverSound = () => {
     
     osc.start();
     osc.stop(audioCtx.currentTime + 0.1);
-  } catch (e) {
+  } catch {
     // ignore
   }
 };
@@ -53,7 +53,7 @@ export const playClickSound = () => {
     
     osc.start();
     osc.stop(audioCtx.currentTime + 0.15);
-  } catch (e) {
+  } catch {
     // ignore
   }
 };
