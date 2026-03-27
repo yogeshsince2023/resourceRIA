@@ -1,0 +1,133 @@
+.home-page {
+  position: relative;
+  padding-bottom: 80px; /* space for sticky banner */
+}
+
+.hero {
+  text-align: center;
+  padding: 5rem 1rem;
+  background-color: var(--bg-color);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  animation: revealTitle 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes revealTitle {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 1rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.browse-year {
+  background-color: var(--light-blue-bg);
+  padding: 4rem 0;
+}
+
+.browse-year h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.year-card {
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.branch-count {
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.features {
+  padding: 4rem 0;
+}
+
+.feature-grid {
+  grid-template-columns: repeat(1, 1fr) !important;
+}
+
+@media (min-width: 768px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.feature-icon {
+  margin-bottom: 0.5rem;
+  animation: float 4s ease-in-out infinite;
+}
+
+.feature-link {
+  color: var(--primary-blue);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.sticky-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--yellow-banner);
+  color: #0D1B2A; /* Always dark for readability even in dark mode */
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  z-index: 50;
+}
+
+.sticky-banner p {
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.banner-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-blue);
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+}
+
+.banner-btn:hover {
+  background-color: var(--primary-blue-hover);
+}

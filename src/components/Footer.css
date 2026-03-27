@@ -1,0 +1,45 @@
+.footer {
+  background-color: var(--light-blue-bg);
+  padding: 3rem 2rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.footer-logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.footer-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-content p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-links a {
+  color: var(--text-main);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
