@@ -17,7 +17,7 @@ const Roadmaps = () => {
             <p style={{ color: 'var(--primary-blue)', marginBottom: '1.5rem', lineHeight: '1.6' }}>
               {roadmap.topics}
             </p>
-            <a href="#" className="btn-primary" style={{ marginTop: 'auto', textAlign: 'center' }}>
+            <a href={roadmap.url || "#"} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ marginTop: 'auto', textAlign: 'center' }}>
               Start Now
             </a>
           </div>
