@@ -49,7 +49,7 @@ const Home = () => {
 
       <div className="sticky-banner">
         <p>Resources are still being added! Want to contribute?</p>
-        <a href="#" target="_blank" rel="noopener noreferrer" className="btn-primary banner-btn">
+        <a href="https://forms.gle/5GZdMcTCzEo92fz28" target="_blank" rel="noopener noreferrer" className="btn-primary banner-btn">
           Contribute Here
         </a>
       </div>

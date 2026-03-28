@@ -1,27 +1,32 @@
 export const languages = [
   {
-    name: "C Programming",
+    title: "C Programming",
     duration: "8 Weeks",
-    topics: "Variables, Data Types, Pointers, Arrays, Functions, Structures, File I/O"
+    topics: ["Variables", "Data Types", "Pointers", "Arrays", "Functions", "File I/O"],
+    url: "https://roadmap.sh/cpp"
   },
   {
-    name: "C++ Programming",
+    title: "C++ Programming",
     duration: "8 Weeks",
-    topics: "OOP, Classes & Objects, STL, Templates, Pointers, File Handling"
+    topics: ["OOP", "Classes & Objects", "STL", "Templates", "Pointers"],
+    url: "https://roadmap.sh/cpp"
   },
   {
-    name: "Python",
+    title: "Python",
     duration: "8 Weeks",
-    topics: "Syntax, OOP, Libraries, Data Structures, Web Dev, ML Basics"
+    topics: ["Syntax", "OOP", "Libraries", "Data Structures", "ML Basics"],
+    url: "https://roadmap.sh/python"
   },
   {
-    name: "JavaScript",
+    title: "JavaScript",
     duration: "8 Weeks",
-    topics: "DOM, ES6, Functions, Async, Events, Fetch, Frameworks"
+    topics: ["DOM", "ES6", "Functions", "Async", "Events", "Frameworks"],
+    url: "https://roadmap.sh/javascript"
   },
   {
-    name: "Java",
+    title: "Java",
     duration: "8 Weeks",
-    topics: "OOP, JVM, Collections, Exception Handling, Streams, Multithreading"
+    topics: ["OOP", "JVM", "Collections", "Exception Handling", "Multithreading"],
+    url: "https://roadmap.sh/java"
   }
 ];

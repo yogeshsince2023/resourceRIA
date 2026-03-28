@@ -1,30 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Blueprint colors */
-  --primary-blue: #2196F3;
-  --primary-blue-hover: #1976D2;
-  --light-blue-bg: #E1F5FE;
-  --dark-navy: #1A237E;
-  --bg-color: #FFFFFF;
-  --text-main: #0D1B2A;
-  --text-muted: #555555;
-  --yellow-banner: #FFF9C4;
-  --card-bg: #FFFFFF;
-  --card-border: #E0E0E0;
+  /* Light Futuristic / Glassmorphism */
+  --primary-blue: #00E5FF;
+  --primary-blue-hover: #00B8D4;
+  --light-blue-bg: rgba(0, 229, 255, 0.05);
+  --dark-navy: #0A0F1A;
+  --bg-color: #F8FAFC;
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+  --yellow-banner: #00E5FF;
+  --banner-text: #050A14;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --glass-blur: blur(12px);
 }
 
 body.dark {
-  --primary-blue: #29B6F6;
-  --primary-blue-hover: #4FC3F7;
-  --light-blue-bg: #1A237E; /* dark section bg */
-  --dark-navy: #E1F5FE;
-  --bg-color: #0A1128;
-  --text-main: #F0F4F8;
-  --text-muted: #A0AAB2;
-  --yellow-banner: #FBC02D;
-  --card-bg: #1C2B4B;
-  --card-border: #2C3E6B;
+  /* Cyber / Neon Dark */
+  --primary-blue: #00F0FF;
+  --primary-blue-hover: #8B5CF6;
+  --light-blue-bg: rgba(22, 27, 34, 0.6); 
+  --dark-navy: #F8FAFC;
+  --bg-color: #09090B;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --yellow-banner: rgba(139, 92, 246, 0.9);
+  --banner-text: #FFFFFF;
+  --card-bg: rgba(22, 27, 34, 0.4);
+  --card-border: rgba(0, 240, 255, 0.15);
+  --glass-blur: blur(16px);
 }
 
 * {
@@ -82,8 +87,10 @@ h1, h2, h3, h4, h5, h6 {
 .card {
   background-color: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   padding: 1.5rem;
   transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   animation: fadeInUp 0.6s ease-out forwards;
@@ -99,12 +106,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(33, 150, 243, 0.15);
-  border-color: rgba(33, 150, 243, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 240, 255, 0.2);
+  border-color: rgba(0, 240, 255, 0.4);
 }
 
 body.dark .card:hover {
-  box-shadow: 0 15px 30px rgba(41, 182, 246, 0.15);
+  box-shadow: 0 15px 35px rgba(0, 240, 255, 0.25);
+  border-color: rgba(0, 240, 255, 0.5);
 }
 
 .btn-primary {

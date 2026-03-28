@@ -7,16 +7,60 @@
   margin-bottom: 3rem;
 }
 
+.filter-controls {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
 .branch-select {
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  font-size: 1rem;
   border-radius: 8px;
   border: 1px solid var(--card-border);
-  background-color: var(--card-bg);
+  background: rgba(0,0,0,0.2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(0,240,255,1)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 0.75rem center;
+  background-size: 16px;
   color: var(--text-main);
-  font-family: inherit;
-  font-size: 1rem;
   outline: none;
   cursor: pointer;
+  appearance: none;
+  transition: all 0.2s;
+  min-width: 250px;
+}
+
+.semester-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(0,0,0,0.2);
+  padding: 0.3rem;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  overflow-x: auto;
+}
+
+.sem-tab {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.sem-tab.active {
+  background: var(--primary-blue);
+  color: #050A14;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+.sem-tab:hover:not(.active) {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-main);
 }
 
 .subjects-grid {
@@ -59,18 +103,42 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 6px;
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-decoration: none;
-  background-color: var(--light-blue-bg);
-  color: var(--dark-navy);
-  transition: opacity 0.2s ease;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .resource-btn:hover {
-  opacity: 0.8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.badge-pyq {
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid #8b5cf6;
+  color: #d8b4fe;
+}
+
+.badge-notes {
+  background: rgba(0, 240, 255, 0.2);
+  border: 1px solid #00f0ff;
+  color: #a5f3fc;
+}
+
+.badge-video {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+}
+
+.badge-other {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e5e7eb;
 }
 
 .resource-btn.youtube { background-color: #FFEBEE; color: #D32F2F; }

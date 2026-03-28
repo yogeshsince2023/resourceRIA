@@ -1,0 +1,102 @@
+.ai-tool-page {
+  padding: 3rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tool-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.tool-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.tool-form {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.tool-form textarea {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background: rgba(0,0,0,0.1);
+  color: var(--text-main);
+  outline: none;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.tool-form textarea:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.2);
+}
+
+.tool-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  color: var(--primary-blue);
+}
+
+.markdown-result {
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+.markdown-result h3 {
+  color: var(--primary-blue);
+  margin-top: 1.5rem;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 0.5rem;
+}
+.markdown-result h3:first-child {
+  margin-top: 0;
+}
+
+.markdown-result ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+.markdown-result li {
+  margin-bottom: 0.5rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  padding-left: 2rem;
+  border-left: 3px solid rgba(0, 240, 255, 0.2);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 1.5rem;
+}
+
+.timeline-week-badge {
+  position: absolute;
+  top: 1.5rem;
+  left: -4rem;
+  background: var(--primary-blue);
+  color: #050A14;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}

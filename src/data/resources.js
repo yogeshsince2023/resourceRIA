@@ -3,16 +3,28 @@ export const resources = {
     label: "Year 1",
     branches: {
       "Physics Group": {
-        subjects: [
-          { name: "Engineering Physics", links: [{ type: "PDF", url: "#" }, { type: "YouTube", url: "#" }] },
-          { name: "Basic Electrical Engineering", links: [{ type: "PDF", url: "#" }] }
-        ]
+        semesters: {
+          "Semester 1": [
+            { name: "Engineering Mathematics I", links: [{ type: "pyq", url: "#" }, { type: "notes", url: "#" }] },
+            { name: "Engineering Physics", links: [{ type: "video", url: "#" }, { type: "notes", url: "#" }] }
+          ],
+          "Semester 2": [
+            { name: "Engineering Mathematics II", links: [{ type: "pyq", url: "#" }] },
+            { name: "Basic Electrical Engineering", links: [{ type: "notes", url: "#" }] }
+          ]
+        }
       },
       "Chemistry Group": {
-        subjects: [
-          { name: "Engineering Chemistry", links: [{ type: "Drive", url: "#" }] },
-          { name: "Programming for Problem Solving", links: [{ type: "YouTube", url: "#" }] }
-        ]
+        semesters: {
+          "Semester 1": [
+            { name: "Engineering Mathematics I", links: [{ type: "notes", url: "#" }] },
+            { name: "Engineering Chemistry", links: [{ type: "pyq", url: "#" }, { type: "video", url: "#" }] }
+          ],
+          "Semester 2": [
+            { name: "Engineering Mathematics II", links: [] },
+            { name: "Programming for Problem Solving", links: [{ type: "video", url: "#" }] }
+          ]
+        }
       }
     }
   },
@@ -20,15 +32,29 @@ export const resources = {
     label: "Year 2",
     branches: {
       "Computer Engineering": {
-        subjects: [
-          { name: "Data Structures", links: [{ type: "YouTube", url: "#" }, { type: "PDF", url: "#" }] },
-          { name: "Object Oriented Programming", links: [{ type: "Drive", url: "#" }] }
-        ]
+        semesters: {
+          "Semester 3": [
+            { name: "Data Structures", links: [{ type: "video", url: "#" }, { type: "notes", url: "#" }] },
+            { name: "Digital Logic Design", links: [{ type: "pyq", url: "#" }] }
+          ],
+          "Semester 4": [
+            { name: "Operating Systems", links: [{ type: "notes", url: "#" }] },
+            { name: "Object Oriented Programming", links: [{ type: "video", url: "#" }] },
+            { name: "Computer Organization", links: [{ type: "notes", url: "#" }] }
+          ]
+        }
       },
       "Information Technology": {
-        subjects: [
-          { name: "Digital Logic Design", links: [{ type: "PDF", url: "#" }] }
-        ]
+        semesters: {
+          "Semester 3": [
+            { name: "Data Structures", links: [] },
+            { name: "Digital Logic Design", links: [{ type: "pyq", url: "#" }] }
+          ],
+          "Semester 4": [
+            { name: "Operating Systems", links: [] },
+            { name: "Computer Networks", links: [] }
+          ]
+        }
       }
     }
   },
@@ -36,10 +62,16 @@ export const resources = {
     label: "Year 3",
     branches: {
       "Computer Engineering": {
-        subjects: [
-          { name: "Operating Systems", links: [{ type: "PDF", url: "#" }] },
-          { name: "Computer Networks", links: [{ type: "YouTube", url: "#" }] }
-        ]
+        semesters: {
+          "Semester 5": [
+            { name: "Database Management Systems", links: [{ type: "notes", url: "#" }] },
+            { name: "Theory of Computation", links: [{ type: "pyq", url: "#" }, { type: "video", url: "#" }] }
+          ],
+          "Semester 6": [
+            { name: "Software Engineering", links: [{ type: "notes", url: "#" }] },
+            { name: "Computer Networks", links: [{ type: "video", url: "#" }] }
+          ]
+        }
       }
     }
   },
@@ -47,10 +79,16 @@ export const resources = {
     label: "Year 4",
     branches: {
       "Computer Engineering": {
-        subjects: [
-          { name: "Machine Learning", links: [{ type: "Drive", url: "#" }] },
-          { name: "Information Security", links: [{ type: "PDF", url: "#" }] }
-        ]
+        semesters: {
+          "Semester 7": [
+            { name: "Machine Learning", links: [{ type: "pyq", url: "#" }] },
+            { name: "Information Security", links: [{ type: "notes", url: "#" }] }
+          ],
+          "Semester 8": [
+            { name: "Cloud Computing", links: [{ type: "video", url: "#" }] },
+            { name: "Project Work", links: [] }
+          ]
+        }
       }
     }
   }

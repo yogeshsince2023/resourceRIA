@@ -13,6 +13,11 @@ import YearResources from './pages/YearResources';
 import Languages from './pages/Languages';
 import Roadmaps from './pages/Roadmaps';
 import GPACalculator from './pages/GPACalculator';
+import BunkCalculator from './pages/BunkCalculator';
+import QuizGenerator from './pages/QuizGenerator';
+import RoadmapGenerator from './pages/RoadmapGenerator';
+import PYQAnalyzer from './pages/PYQAnalyzer';
+import NotesSummarizer from './pages/NotesSummarizer';
 import ComingSoon from './components/ComingSoon';
 
 function App() {
@@ -52,6 +57,11 @@ function App() {
             <Route path="/roadmaps" element={<PageWrapper><Roadmaps /></PageWrapper>} />
             <Route path="/timetable" element={<PageWrapper><ComingSoon /></PageWrapper>} />
             <Route path="/gpa-calculator" element={<PageWrapper><GPACalculator /></PageWrapper>} />
+            <Route path="/bunk-calculator" element={<PageWrapper><BunkCalculator /></PageWrapper>} />
+            <Route path="/quiz" element={<PageWrapper><QuizGenerator /></PageWrapper>} />
+            <Route path="/roadmap-generator" element={<PageWrapper><RoadmapGenerator /></PageWrapper>} />
+            <Route path="/pyq-analyzer" element={<PageWrapper><PYQAnalyzer /></PageWrapper>} />
+            <Route path="/notes-summarizer" element={<PageWrapper><NotesSummarizer /></PageWrapper>} />
             <Route path="/about-us" element={<PageWrapper><ComingSoon /></PageWrapper>} />
           </Routes>
         </AnimatePresence>

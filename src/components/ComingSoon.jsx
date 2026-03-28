@@ -14,7 +14,7 @@ const ComingSoon = () => {
       <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', maxWidth: '600px' }}>
         Got what we're missing? Share it and help us deliver to everyone.
       </p>
-      <a href="#" target="_blank" rel="noopener noreferrer" className="btn-primary">
+      <a href="https://forms.gle/5GZdMcTCzEo92fz28" target="_blank" rel="noopener noreferrer" className="btn-primary">
         Contribute here
       </a>
     </div>
