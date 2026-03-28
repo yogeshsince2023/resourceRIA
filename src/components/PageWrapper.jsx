@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 
 const pageVariants = {
   initial: { opacity: 0, y: 15, scale: 0.98 },
@@ -25,6 +26,10 @@ const PageWrapper = ({ children }) => {
       {children}
     </motion.div>
   );
+};
+
+PageWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default PageWrapper;
