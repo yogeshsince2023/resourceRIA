@@ -18,7 +18,14 @@ const QuizGenerator = () => {
 
   useEffect(() => {
     const saved = localStorage.getItem("ria_quiz_history");
-    if (saved) setHistory(JSON.parse(saved));
+    if (saved) {
+      try {
+        setHistory(JSON.parse(saved));
+      } catch (error) {
+        console.error("Failed to parse quiz history:", error);
+        // Leave history empty
+      }
+    }
   }, []);
 
   const handleGenerate = async () => {
@@ -29,13 +36,19 @@ const QuizGenerator = () => {
     setScore(0);
     setShowResults(false);
     
-    const data = await generateQuiz(subject, difficulty);
-    if (data && Array.isArray(data)) {
-      setQuizData(data);
-    } else {
-      alert("Failed to generate quiz. Please try again.");
+    try {
+      const data = await generateQuiz(subject, difficulty);
+      if (data && Array.isArray(data)) {
+        setQuizData(data);
+      } else {
+        alert("Failed to generate quiz. Please try again.");
+      }
+    } catch (error) {
+      console.error("Generate quiz error:", error);
+      alert("An error occurred while generating the quiz. Please try again.");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const handleAnswer = (option) => {
@@ -53,16 +66,16 @@ const QuizGenerator = () => {
       setSelectedOption(null);
       setIsAnswered(false);
     } else {
-      finishQuiz();
+      finishQuiz(score);
     }
   };
 
-  const finishQuiz = () => {
+  const finishQuiz = (finalScore) => {
     setShowResults(true);
     const newRecord = {
       subject,
       difficulty,
-      score,
+      score: finalScore,
       total: quizData.length,
       date: new Date().toLocaleDateString()
     };

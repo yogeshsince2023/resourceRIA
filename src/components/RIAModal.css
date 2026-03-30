@@ -63,6 +63,10 @@
 .close-btn:hover {
   color: var(--text-main);
 }
+.close-btn:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
 
 .ria-chat-window {
   flex: 1;
@@ -139,6 +143,14 @@
 
 .typing .dot:nth-child(2) { animation-delay: 0.2s; }
 .typing .dot:nth-child(3) { animation-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .typing .dot {
+    animation: none;
+    transform: none;
+    opacity: 0.7;
+  }
+}
 
 @keyframes typing {
   0%, 100% { transform: scale(1); opacity: 0.5; }

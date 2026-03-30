@@ -4,7 +4,7 @@ import "./AI_Tools.css";
 
 const RoadmapGenerator = () => {
   const [goal, setGoal] = useState("");
-  const [skillLevel, setSkillLevel] = useState("Beginner");
+  const [skillLevel, setSkillLevel] = useState("Complete Beginner");
   const [timeWeeks, setTimeWeeks] = useState(4);
   const [learningStyle, setLearningStyle] = useState("Videos & Projects");
   const [loading, setLoading] = useState(false);
@@ -14,10 +14,16 @@ const RoadmapGenerator = () => {
     if (!goal.trim()) return;
     setLoading(true);
     setRoadmap(null);
-    const data = await generateCustomRoadmap(goal, skillLevel, timeWeeks, learningStyle);
-    if (data) setRoadmap(data);
-    else alert("Failed to generate roadmap. Please try again.");
-    setLoading(false);
+    try {
+      const data = await generateCustomRoadmap(goal, skillLevel, timeWeeks, learningStyle);
+      if (data) setRoadmap(data);
+      else alert("Failed to generate roadmap. Please try again.");
+    } catch (error) {
+      console.error("Generate roadmap error:", error);
+      alert("An error occurred while generating the roadmap. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

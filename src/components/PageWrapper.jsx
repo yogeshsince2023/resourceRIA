@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
@@ -14,6 +16,18 @@ const pageTransition = {
 };
 
 const PageWrapper = ({ children }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    let title = 'ResourceRIA | ' + location.pathname.substring(1).split('/').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' / ');
+    if (location.pathname === '/') title = 'ResourceRIA | Academic & Tool Hub';
+    if (location.pathname.startsWith('/resources/year')) title = 'ResourceRIA | Subjects';
+    if (location.pathname === '/gpa-calculator') title = 'ResourceRIA | GPA Calculator';
+    if (location.pathname === '/bunk-calculator') title = 'ResourceRIA | Bunk Calculator';
+    
+    document.title = title;
+  }, [location.pathname]);
+
   return (
     <motion.div
       initial="initial"

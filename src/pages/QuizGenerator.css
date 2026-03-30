@@ -113,6 +113,13 @@
   border-color: var(--primary-blue);
 }
 
+.quiz-option:focus-visible:not(:disabled) {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+  background: var(--light-blue-bg);
+  border-color: var(--primary-blue);
+}
+
 .quiz-option.correct {
   background: rgba(16, 185, 129, 0.2);
   border-color: #10b981;

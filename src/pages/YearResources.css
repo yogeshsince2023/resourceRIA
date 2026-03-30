@@ -63,6 +63,11 @@
   color: var(--text-main);
 }
 
+.sem-tab:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
 .subjects-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -105,7 +110,7 @@
   gap: 0.5rem;
   padding: 0.5rem 0.8rem;
   border-radius: 6px;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 700;
   text-decoration: none;
   letter-spacing: 0.5px;
@@ -113,6 +118,13 @@
 }
 
 .resource-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.resource-btn:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }

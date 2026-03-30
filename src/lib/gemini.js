@@ -2,12 +2,11 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { resources } from "../data/resources";
 
 // Fallback directly to string so it works even if Vite wasn't restarted after .env creation
-const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyAVKG7PExs6O_yaXMNeek4io9-rCZ_f6fg";
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const systemInstruction = `You are RIA, the AI assistant for ResourceRIA — a college academic platform.
-You have access to all resources on this platform combined with user data:
-${JSON.stringify(resources)}
+You have access to academic resources organized by year, branch, and semester, including subjects like Engineering Physics, Data Structures, etc. Use this context to help students.
 Help students find notes, explain topics, and guide their learning.
 Always link to relevant resources when available.`;
 
@@ -54,11 +53,17 @@ The JSON array MUST exactly match this format:
 
 export const generateCustomRoadmap = async (goal, skillLevel, timeWeeks, learningStyle) => {
   if (!apiKey) return null;
+  if (typeof goal !== 'string' || typeof skillLevel !== 'string' || typeof learningStyle !== 'string' || typeof timeWeeks !== 'number' || timeWeeks < 1 || timeWeeks > 52) {
+    return null; // invalid input
+  }
+  const sanitizedGoal = goal.trim().substring(0, 200);
+  const sanitizedSkillLevel = skillLevel.trim().substring(0, 50);
+  const sanitizedLearningStyle = learningStyle.trim().substring(0, 100);
   const prompt = `Create a personalized week-by-week learning roadmap for a student.
-Goal: ${goal}
-Current Skill Level: ${skillLevel}
+Goal: ${sanitizedGoal}
+Current Skill Level: ${sanitizedSkillLevel}
 Time Available: ${timeWeeks} weeks
-Preferred Learning Style: ${learningStyle}
+Preferred Learning Style: ${sanitizedLearningStyle}
 
 Respond strictly in valid JSON format ONLY, without markdown code block backticks inside the string. Just return the raw JSON object.
 The JSON MUST exactly match this format:
@@ -88,9 +93,13 @@ The JSON MUST exactly match this format:
 
 export const analyzePYQ = async (question) => {
   if (!apiKey) return "API Key not configured!";
+  if (!question || typeof question !== 'string' || question.length > 2000) {
+    return "Invalid input: question must be a string under 2000 characters.";
+  }
+  const sanitizedQuestion = question.trim().replace(/[^\w\s.,!?-]/g, ''); // basic sanitization
   const prompt = `Analyze the following Past Year Question (PYQ) for a college exam:
 
-"${question}"
+"${sanitizedQuestion}"
 
 Provide a detailed response in Markdown format with the following headings:
 ### 🎯 Core Concept Tested
@@ -117,6 +126,10 @@ Provide a detailed response in Markdown format with the following headings:
 
 export const summarizeNotes = async (notes) => {
   if (!apiKey) return "API Key not configured!";
+  const MAX_INPUT_SIZE = 5000;
+  if (!notes || typeof notes !== 'string' || notes.length > MAX_INPUT_SIZE) {
+    return `Invalid input: notes must be a string under ${MAX_INPUT_SIZE} characters.`;
+  }
   const prompt = `Analyze the following study notes and provide a structured study guide:
 
 "${notes}"

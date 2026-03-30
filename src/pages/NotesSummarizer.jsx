@@ -12,9 +12,15 @@ const NotesSummarizer = () => {
     if (!notes.trim()) return;
     setLoading(true);
     setSummary("");
-    const result = await summarizeNotes(notes);
-    setSummary(result);
-    setLoading(false);
+    try {
+      const result = await summarizeNotes(notes);
+      setSummary(result);
+    } catch (error) {
+      console.error("Summarize error:", error);
+      setSummary("An error occurred while summarizing. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -26,8 +32,9 @@ const NotesSummarizer = () => {
 
       <div className="tool-form card">
         <div className="form-group">
-          <label>Paste Study Notes or Transcripts</label>
+          <label htmlFor="notes">Paste Study Notes or Transcripts</label>
           <textarea 
+            id="notes"
             rows="8"
             placeholder="Paste your unformatted notes, lecture transcripts, or textbook paragraphs here..."
             value={notes}

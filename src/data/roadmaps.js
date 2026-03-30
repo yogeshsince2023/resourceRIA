@@ -3,7 +3,7 @@ export const roadmaps = [
     title: "Web Development",
     duration: "8 Weeks",
     topics: ["HTML", "CSS", "JS", "React", "Node.js", "Express.js"],
-    url: "https://roadmap.sh/frontend"
+    url: "https://roadmap.sh/full-stack"
   },
   {
     title: "DSA",
@@ -30,7 +30,7 @@ export const roadmaps = [
     url: "https://roadmap.sh/ux-design"
   },
   {
-    title: "App Development",
+    title: "Flutter Development",
     duration: "6 Weeks",
     topics: ["Flutter", "Dart", "Android Studio", "Firebase", "Native APIs"],
     url: "https://roadmap.sh/flutter"

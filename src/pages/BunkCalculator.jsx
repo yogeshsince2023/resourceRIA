@@ -26,15 +26,24 @@ const BunkCalculator = () => {
     const currentPct = (a / t) * 100;
     
     if (currentPct < req) {
-      // Need to attend N more classes
-      // (a + n) / (t + n) = req / 100 => 100a + 100n = req*t + req*n => n(100 - req) = req*t - 100a
-      const n = Math.ceil((req * t - 100 * a) / (100 - req));
-      setResult({
-        status: 'danger',
-        currentPct: currentPct.toFixed(2),
-        message: `You need to attend ${n} more consecutive class${n > 1 ? 'es' : ''} to reach ${req}%.`,
-        icon: <AlertCircle size={32} className="text-danger" />
-      });
+      if (req === 100) {
+        setResult({
+          status: 'danger',
+          currentPct: currentPct.toFixed(2),
+          message: 'Impossible to reach 100% attendance with past absences.',
+          icon: <AlertCircle size={32} className="text-danger" />
+        });
+      } else {
+        // Need to attend N more classes
+        // (a + n) / (t + n) = req / 100 => 100a + 100n = req*t + req*n => n(100 - req) = req*t - 100a
+        const n = Math.ceil((req * t - 100 * a) / (100 - req));
+        setResult({
+          status: 'danger',
+          currentPct: currentPct.toFixed(2),
+          message: `You need to attend ${n} more consecutive class${n > 1 ? 'es' : ''} to reach ${req}%.`,
+          icon: <AlertCircle size={32} className="text-danger" />
+        });
+      }
     } else if (currentPct > req) {
       // Can bunk M classes
       // a / (t + m) = req / 100 => 100a = req*t + req*m => m = Math.floor((100a - req*t) / req)
@@ -43,7 +52,7 @@ const BunkCalculator = () => {
         setResult({
           status: 'warning',
           currentPct: currentPct.toFixed(2),
-          message: `You are exactly at your target. Do not bunk the next class!`,
+          message: `You are above your target but cannot afford to miss the next class.`,
           icon: <Target size={32} className="text-warning" />
         });
       } else {

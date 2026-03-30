@@ -25,6 +25,17 @@ const YearResources = () => {
   const [activeRIA, setActiveRIA] = useState(null);
 
   useEffect(() => {
+    const branch = searchParams.get('branch');
+    const sem = searchParams.get('sem');
+    if (branch && yearData && yearData.branches[branch] && branch !== selectedBranch) {
+      setSelectedBranch(branch);
+    }
+    if (sem && yearData && yearData.branches[selectedBranch] && yearData.branches[selectedBranch].semesters[sem] && sem !== selectedSem) {
+      setSelectedSem(sem);
+    }
+  }, [searchParams, selectedBranch, selectedSem, yearData]);
+
+  useEffect(() => {
     const params = new URLSearchParams();
     if (selectedBranch) params.set('branch', selectedBranch);
     if (selectedSem) params.set('sem', selectedSem);
@@ -71,6 +82,8 @@ const YearResources = () => {
               if (newBranchObj && newBranchObj.semesters) {
                 const sems = Object.keys(newBranchObj.semesters);
                 if (sems.length > 0) setSelectedSem(sems[0]);
+              } else {
+                setSelectedSem('');
               }
             }}
           >

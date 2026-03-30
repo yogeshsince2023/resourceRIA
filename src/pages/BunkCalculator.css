@@ -70,6 +70,11 @@
   accent-color: var(--primary-blue);
 }
 
+.range-container input[type="range"]:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
 .range-val {
   background: var(--light-blue-bg);
   color: var(--primary-blue);

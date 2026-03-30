@@ -12,9 +12,15 @@ const PYQAnalyzer = () => {
     if (!question.trim()) return;
     setLoading(true);
     setAnalysis("");
-    const result = await analyzePYQ(question);
-    setAnalysis(result);
-    setLoading(false);
+    try {
+      const result = await analyzePYQ(question);
+      setAnalysis(result);
+    } catch (error) {
+      console.error("Analyze error:", error);
+      setAnalysis("An error occurred while analyzing. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -26,8 +32,9 @@ const PYQAnalyzer = () => {
 
       <div className="tool-form card">
         <div className="form-group">
-          <label>Paste Question Here</label>
+          <label htmlFor="question-input">Paste Question Here</label>
           <textarea 
+            id="question-input"
             rows="5"
             placeholder="e.g. Explain the concept of Virtual Memory with a suitable diagram and discuss page replacement algorithms."
             value={question}
