@@ -44,6 +44,13 @@ body.dark {
   --glass-blur: blur(16px);
 }
 
+body.dark .navbar-logo-img,
+body.dark .footer-logo-img {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
 * {
   margin: 0;
   padding: 0;

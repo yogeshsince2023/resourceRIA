@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { ExternalLink, FileText, HardDrive, PlayCircle } from 'lucide-react';
 import { resources } from '../data/resources';
@@ -11,40 +11,23 @@ const YearResources = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const yearData = resources[year];
 
-  const initialBranch = searchParams.get('branch') || (yearData ? Object.keys(yearData.branches)[0] : '');
-  const [selectedBranch, setSelectedBranch] = useState(initialBranch);
-
-  const branchData = yearData && yearData.branches[selectedBranch] 
-                     ? yearData.branches[selectedBranch] 
-                     : { semesters: {} };
-  
-  const availableSemesters = Object.keys(branchData.semesters || {});
-  const initialSem = searchParams.get('sem') || (availableSemesters.length > 0 ? availableSemesters[0] : '');
-  const [selectedSem, setSelectedSem] = useState(initialSem);
-
   const [activeRIA, setActiveRIA] = useState(null);
-
-  useEffect(() => {
-    const branch = searchParams.get('branch');
-    const sem = searchParams.get('sem');
-    if (branch && yearData && yearData.branches[branch] && branch !== selectedBranch) {
-      setSelectedBranch(branch);
-    }
-    if (sem && yearData && yearData.branches[selectedBranch] && yearData.branches[selectedBranch].semesters[sem] && sem !== selectedSem) {
-      setSelectedSem(sem);
-    }
-  }, [searchParams, selectedBranch, selectedSem, yearData]);
-
-  useEffect(() => {
-    const params = new URLSearchParams();
-    if (selectedBranch) params.set('branch', selectedBranch);
-    if (selectedSem) params.set('sem', selectedSem);
-    setSearchParams(params, { replace: true });
-  }, [selectedBranch, selectedSem, setSearchParams]);
 
   if (!yearData) {
     return <div className="container" style={{ padding: '4rem 2rem', textAlign: 'center' }}><h2>Year not found</h2></div>;
   }
+
+  const branches = Object.keys(yearData.branches);
+  const selectedBranch = searchParams.get('branch') && yearData.branches[searchParams.get('branch')]
+    ? searchParams.get('branch')
+    : branches[0];
+
+  const branchData = yearData.branches[selectedBranch] || { semesters: {} };
+  const availableSemesters = Object.keys(branchData.semesters || {});
+
+  const selectedSem = searchParams.get('sem') && branchData.semesters?.[searchParams.get('sem')]
+    ? searchParams.get('sem')
+    : availableSemesters[0] || '';
 
   const subjects = branchData.semesters?.[selectedSem] || [];
 
@@ -77,17 +60,13 @@ const YearResources = () => {
             className="branch-select"
             value={selectedBranch}
             onChange={(e) => {
-              setSelectedBranch(e.target.value);
-              const newBranchObj = yearData.branches[e.target.value];
-              if (newBranchObj && newBranchObj.semesters) {
-                const sems = Object.keys(newBranchObj.semesters);
-                if (sems.length > 0) setSelectedSem(sems[0]);
-              } else {
-                setSelectedSem('');
-              }
+              const newBranch = e.target.value;
+              const newBranchObj = yearData.branches[newBranch];
+              const sems = newBranchObj ? Object.keys(newBranchObj.semesters || {}) : [];
+              setSearchParams({ branch: newBranch, sem: sems[0] || '' }, { replace: true });
             }}
           >
-            {Object.keys(yearData.branches).map(branchName => (
+            {branches.map(branchName => (
               <option key={branchName} value={branchName}>{branchName}</option>
             ))}
           </select>
@@ -98,7 +77,7 @@ const YearResources = () => {
                 <button 
                   key={semName}
                   className={`sem-tab ${selectedSem === semName ? 'active' : ''}`}
-                  onClick={() => setSelectedSem(semName)}
+                  onClick={() => setSearchParams({ branch: selectedBranch, sem: semName }, { replace: true })}
                 >
                   {semName}
                 </button>

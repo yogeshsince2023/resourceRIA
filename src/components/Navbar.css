@@ -196,7 +196,7 @@
 
 /* Hamburger — hidden on desktop */
 .mobile-menu-btn {
-  display: none;
+  display: none !important;
   background: none;
   border: none;
   color: var(--text-main);
@@ -205,7 +205,7 @@
 
 @media (max-width: 768px) {
   .mobile-menu-btn {
-    display: flex;
+    display: flex !important;
   }
   
   .nav-links {

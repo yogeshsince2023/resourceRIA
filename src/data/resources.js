@@ -2,6 +2,30 @@ export const resources = {
   year1: {
     label: "Year 1",
     branches: {
+      "Computer Science & Engineering": {
+        semesters: {
+          "Semester 1": [
+            { name: "Physics", links: [] },
+            { name: "Mathematics - I", links: [] },
+            { name: "Biology for Engineers", links: [] },
+            { name: "Basic Electrical Engineering", links: [] },
+            { name: "Engineering Mechanics - I", links: [] },
+            { name: "Engineering Graphics & Design", links: [] },
+            { name: "Physics Laboratory", links: [] },
+            { name: "Basic Electrical Engineering Laboratory", links: [] }
+          ],
+          "Semester 2": [
+            { name: "Chemistry", links: [] },
+            { name: "Mathematics-II", links: [] },
+            { name: "Programming for Problem Solving", links: [] },
+            { name: "Engineering Mechanics II", links: [] },
+            { name: "English", links: [] },
+            { name: "Chemistry Laboratory", links: [] },
+            { name: "Programming for Problem Solving Laboratory", links: [] },
+            { name: "Workshop/Manufacturing Practices", links: [] }
+          ]
+        }
+      },
       "Physics Group": {
         semesters: {
           "Semester 1": [
@@ -151,6 +175,36 @@ export const resources = {
   year2: {
     label: "Year 2",
     branches: {
+      "Computer Science & Engineering": {
+        semesters: {
+          "Semester 3": [
+            { name: "Mathematics-III", links: [] },
+            { name: "Analog Electronic Circuit", links: [] },
+            { name: "Digital Electronics", links: [] },
+            { name: "Data Structure & Algorithms", links: [] },
+            { name: "Humanities-I (Principles of Management)", links: [] },
+            { name: "IT Workshop (MATLAB)", links: [] },
+            { name: "Analog Electronic Circuits Lab", links: [] },
+            { name: "Digital Electronics Lab", links: [] },
+            { name: "Data Structure & Algorithm Laboratory", links: [] },
+            { name: "Information Theory for Cyber Security", links: [] }
+          ],
+          "Semester 4": [
+            { name: "Discrete Mathematics", links: [] },
+            { name: "Computer Organization & Architecture", links: [] },
+            { name: "Artificial Intelligence & Machine Learning", links: [] },
+            { name: "Design & Analysis of Algorithms", links: [] },
+            { name: "Advanced Programming (OOP)", links: [] },
+            { name: "Management I (Finance & Accounting)", links: [] },
+            { name: "Data Analytics", links: [] },
+            { name: "Computer Organization & Architecture Laboratory", links: [] },
+            { name: "AI & Machine Learning Laboratory", links: [] },
+            { name: "Design & Analysis of Algorithms Laboratory", links: [] },
+            { name: "Advanced Programming (OOP) Laboratory", links: [] },
+            { name: "Information Theory for Cyber Security", links: [] }
+          ]
+        }
+      },
       "Computer Engineering": {
         semesters: {
           "Semester 3": [
