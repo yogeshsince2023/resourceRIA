@@ -1,13 +1,19 @@
 .navbar {
-  background-color: var(--card-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border-bottom: 1px solid var(--card-border);
+  background-color: rgba(245, 247, 250, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   padding: 0.75rem 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  animation: slideInDown 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+body.dark .navbar {
+  background-color: rgba(15, 23, 42, 0.85);
+  border-bottom-color: rgba(255, 255, 255, 0.04);
 }
 
 .nav-container {
@@ -32,7 +38,7 @@
 }
 
 .navbar-logo-img:hover {
-  transform: scale(1.08);
+  transform: scale(1.08) rotate(-2deg);
 }
 
 .nav-links {
@@ -44,22 +50,26 @@
 .nav-links a {
   font-weight: 500;
   color: var(--text-main);
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
   position: relative;
   padding: 0.4rem 0;
+}
+
+.nav-links a:hover {
+  transform: translateY(-1px);
 }
 
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   left: 50%;
   transform: translateX(-50%) scaleX(0);
-  width: 80%;
-  height: 2px;
-  background: var(--primary-blue);
-  border-radius: 1px;
-  transition: transform 0.25s ease;
+  width: 40%;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 999px;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .nav-links a:hover::after,
@@ -68,7 +78,7 @@
 }
 
 .nav-links a:hover, .nav-links a.active {
-  color: var(--primary-blue);
+  color: var(--primary);
 }
 
 .nav-actions {
@@ -81,9 +91,9 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--card-border);
-  border-radius: 8px;
+  background: var(--surface-container);
+  border: none;
+  border-radius: 12px;
   padding: 0.4rem 0.8rem;
   color: var(--text-muted);
   cursor: pointer;
@@ -91,9 +101,8 @@
   font-family: inherit;
 }
 .search-btn:hover {
-  background: rgba(0, 240, 255, 0.1);
-  border-color: var(--primary-blue);
-  color: var(--primary-blue);
+  background: var(--surface-container-high);
+  color: var(--primary);
 }
 .search-shortcut {
   font-size: 0.7rem;
@@ -115,11 +124,12 @@
   justify-content: center;
   padding: 0.4rem;
   border-radius: 6px;
-  transition: color 0.2s, background 0.2s;
+  transition: color 0.2s, background 0.2s, transform 0.2s;
 }
 .icon-btn:hover {
   color: var(--primary-blue);
   background: rgba(0, 240, 255, 0.08);
+  transform: scale(1.1);
 }
 
 .theme-toggle {
@@ -129,6 +139,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
 }
 
 /* Dropdown */
@@ -166,12 +181,22 @@
   -webkit-backdrop-filter: var(--glass-blur);
   min-width: 220px;
   box-shadow: 0px 8px 24px 0px rgba(0,0,0,0.4);
-  border: 1px solid var(--card-border);
-  border-radius: 10px;
+  border: none; /* No-line rule */
+  border-radius: 1rem;
   z-index: 110;
   flex-direction: column;
   overflow: hidden;
   transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: var(--outline-variant);
+  margin: 0.25rem 0;
+}
+
+body.dark .dropdown-divider {
+  background: var(--outline-variant);
 }
 
 .dropdown-content.open {

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Calculator, Calendar, ArrowRight, Brain, BarChart3, BookOpen, Sparkles } from 'lucide-react';
+import { Calculator, BarChart3, BookOpen, Sparkles, ArrowRight, Compass, Users, Brain } from 'lucide-react';
 import { resources } from '../data/resources';
+import { contributors } from '../data/mockContributors';
 import './Home.css';
 
 const Home = () => {
@@ -81,7 +82,52 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="sticky-banner" role="banner">
+      {/* Explore CTA Section */}
+      <section className="explore-cta" aria-label="Explore">
+        <div className="container">
+          <Compass size={48} className="explore-icon" />
+          <h2 className="heading-two-tone">
+            Explore <span className="highlight">Everything</span>
+          </h2>
+          <p className="explore-description">
+            Browse all academic resources, programming languages, learning roadmaps, and study tools in one unified view
+          </p>
+          <div className="explore-cta-buttons">
+            <Link to="/explore" className="btn-primary">
+              Start Exploring <ArrowRight size={18} />
+            </Link>
+            <Link to="/resources" className="btn-secondary">
+              Browse by Year
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Contributors Teaser Section */}
+      <section className="contributors-teaser" aria-label="Contributors">
+        <div className="container">
+          <Users size={40} className="teaser-icon" />
+          <h2>Join Our Growing Community</h2>
+          <p className="teaser-stats">
+            <span className="stat-highlight">{contributors.length}+ contributors</span> sharing knowledge
+          </p>
+          <div className="avatar-stack">
+            {contributors.slice(0, 5).map((contributor) => (
+              <img 
+                key={contributor.id} 
+                src={contributor.avatar} 
+                alt={contributor.name}
+                title={contributor.name}
+              />
+            ))}
+          </div>
+          <Link to="/contributors" className="contributor-link">
+            Meet all contributors <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
+
+      <div className="sticky-banner" role="region" aria-label="Site notices">
         <p>Resources are still being added! Want to contribute?</p>
         <a href="https://forms.gle/5GZdMcTCzEo92fz28" target="_blank" rel="noopener noreferrer" className="btn-primary banner-btn">
           Contribute Here

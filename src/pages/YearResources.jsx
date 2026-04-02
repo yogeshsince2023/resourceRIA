@@ -90,7 +90,7 @@ const YearResources = () => {
       <div className="subjects-grid">
         {subjects.length > 0 ? (
           subjects.map((subject, idx) => (
-            <div key={idx} className="card subject-card" style={{animationDelay: `${idx * 0.1}s`}}>
+            <div key={`${selectedBranch}-${selectedSem}-${idx}`} className="card subject-card" style={{animationDelay: `${idx * 0.1}s`}}>
               <h3>{subject.name}</h3>
               <div className="resource-links">
                 {subject.links.map((link, linkIdx) => (

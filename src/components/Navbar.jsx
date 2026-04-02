@@ -82,8 +82,10 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Resources', path: '/resources' },
+    { name: 'Explore', path: '/explore' },
     { name: 'Languages', path: '/languages' },
-    { name: 'Roadmaps', path: '/roadmaps' }
+    { name: 'Roadmaps', path: '/roadmaps' },
+    { name: 'Contacts', path: '/contacts' }
   ];
 
   const isActive = (path) => {
@@ -123,6 +125,11 @@ const Navbar = () => {
             <div ref={dropdownMenuRef} className={`dropdown-content ${dropdownOpen ? 'open' : ''}`} id="tools-menu" role="menu">
               <Link to="/bunk-calculator" role="menuitem">Bunk Calculator</Link>
               <Link to="/gpa-calculator" role="menuitem">GPA Calculator</Link>
+              <Link to="/scientific-calculator" role="menuitem">Scientific Calculator</Link>
+              <div className="dropdown-divider"></div>
+              <Link to="/leaderboard" role="menuitem">Leaderboard</Link>
+              <Link to="/contributors" role="menuitem">Contributors</Link>
+              <div className="dropdown-divider"></div>
               <Link to="/quiz" role="menuitem">Smart AI Quiz</Link>
               <Link to="/roadmap-generator" role="menuitem">AI Roadmap</Link>
               <Link to="/pyq-analyzer" role="menuitem">AI PYQ Analyzer</Link>

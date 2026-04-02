@@ -1,0 +1,265 @@
+.badges-page {
+  padding: 4rem 2rem;
+}
+
+.badges-page > .heading-two-tone {
+  opacity: 0;
+  animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s forwards;
+}
+
+.badges-page > .page-subtitle {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
+}
+
+.tab-bar {
+  margin-bottom: 3rem;
+}
+
+/* Badges Grid */
+.badges-grid {
+  margin-bottom: 4rem;
+}
+
+.badge-card {
+  position: relative;
+  text-align: center;
+  overflow: visible;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.badge-card:hover {
+  transform: translateY(-4px);
+}
+
+.badge-card.locked {
+  opacity: 0.6;
+  filter: grayscale(0.5);
+  transition: opacity 0.3s, filter 0.3s;
+}
+
+.badge-card.locked:hover {
+  opacity: 0.75;
+  filter: grayscale(0.3);
+}
+
+.lock-overlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--outline);
+  z-index: 1;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.badge-emoji {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.badge-card:hover .badge-emoji {
+  transform: scale(1.2) rotate(-5deg);
+}
+
+.badge-name {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.badge-description {
+  color: var(--on-surface-variant);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Progress Bar */
+.badge-progress-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.badge-progress {
+  flex: 1;
+  height: 8px;
+  background: var(--surface-container);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.badge-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent-purple));
+  background-size: 200% 100%;
+  border-radius: 999px;
+  transition: width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.badge-progress-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  min-width: 40px;
+  text-align: right;
+}
+
+.badge-requirement {
+  font-size: 0.8rem;
+  color: var(--on-surface-variant);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.badge-category-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: var(--surface-container);
+  color: var(--on-surface-variant);
+  transition: transform 0.2s;
+}
+
+.badge-card:hover .badge-category-tag {
+  transform: scale(1.05);
+}
+
+.category-contribution {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+}
+
+.category-academic {
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
+}
+
+.category-community {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+}
+
+/* Progress Summary */
+.progress-summary {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out 0.3s forwards;
+}
+
+.progress-summary h2 {
+  margin-bottom: 2rem;
+}
+
+.progress-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.progress-stat {
+  text-align: center;
+  opacity: 0;
+  animation: fadeInScale 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.progress-stat:nth-child(1) { animation-delay: 0.4s; }
+.progress-stat:nth-child(2) { animation-delay: 0.5s; }
+.progress-stat:nth-child(3) { animation-delay: 0.6s; }
+.progress-stat:nth-child(4) { animation-delay: 0.7s; }
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  margin-bottom: 0.25rem;
+  animation: countUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.stat-value:nth-child(1) { animation-delay: 0.5s; }
+
+.stat-value.unlocked {
+  color: var(--accent-emerald);
+}
+
+.stat-value.in-progress {
+  color: var(--accent-amber);
+}
+
+.stat-value.locked {
+  color: var(--outline);
+}
+
+.stat-value.total {
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--on-surface-variant);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .progress-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .badges-page {
+    padding: 3rem 1rem;
+  }
+
+  .tab-bar {
+    flex-direction: column;
+  }
+
+  .sem-tab {
+    width: 100%;
+  }
+
+  .badge-emoji {
+    font-size: 2.5rem;
+  }
+
+  .progress-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+}
+
+/* Dark mode adjustments */
+body.dark .badge-card.locked {
+  filter: grayscale(0.3);
+}
+
+body.dark .category-contribution {
+  background: rgba(251, 191, 36, 0.1);
+}
+
+body.dark .category-academic {
+  background: rgba(167, 139, 250, 0.1);
+}
+
+body.dark .category-community {
+  background: rgba(52, 211, 153, 0.1);
+}

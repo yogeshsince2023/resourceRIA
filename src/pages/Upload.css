@@ -1,0 +1,230 @@
+.upload-page {
+  padding: 4rem 2rem;
+  max-width: 900px;
+}
+
+.upload-page > .heading-two-tone {
+  opacity: 0;
+  animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s forwards;
+}
+
+.upload-page > .page-subtitle {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
+}
+
+.coming-soon-banner {
+  margin-bottom: 3rem;
+  background: var(--surface-container-low);
+  border-left: 4px solid var(--accent-amber);
+  opacity: 0;
+  animation: fadeInLeft 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coming-soon-banner:hover {
+  transform: translateX(4px);
+  box-shadow: -4px 0 12px rgba(217, 119, 6, 0.15);
+}
+
+.info-icon {
+  color: var(--accent-amber);
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.upload-form {
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out 0.4s forwards;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--on-surface);
+}
+
+.file-type-selector {
+  width: fit-content;
+}
+
+.form-selectors {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.form-selectors .form-group {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 0;
+}
+
+/* Dropzone */
+.dropzone {
+  border: 2px dashed var(--outline-variant);
+  border-radius: 1rem;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: var(--surface-container-low);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.dropzone::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 97, 164, 0.05), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.dropzone:hover::before,
+.dropzone.dragging::before {
+  opacity: 1;
+}
+
+.dropzone:hover,
+.dropzone.dragging {
+  border-color: var(--primary);
+  background: var(--surface-container);
+  transform: scale(1.01);
+}
+
+.dropzone-icon {
+  color: var(--outline);
+  animation: float 4s ease-in-out infinite;
+  transition: color 0.3s;
+}
+
+.dropzone:hover .dropzone-icon {
+  color: var(--primary);
+}
+
+.dropzone-text strong {
+  display: block;
+  color: var(--on-surface);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.dropzone-text p {
+  color: var(--on-surface-variant);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 2rem;
+  opacity: 0.5;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Alternative CTA */
+.alternative-cta {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--surface-container-low);
+  border-radius: 1rem;
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out 0.6s forwards;
+  transition: transform 0.3s ease;
+}
+
+.alternative-cta:hover {
+  transform: translateY(-2px);
+}
+
+.alternative-cta p {
+  color: var(--on-surface-variant);
+  margin-bottom: 1rem;
+}
+
+.alternative-cta .btn-secondary {
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.alternative-cta .btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .upload-page {
+    padding: 3rem 1rem;
+  }
+
+  .form-selectors {
+    flex-direction: column;
+  }
+
+  .form-selectors .form-group {
+    min-width: 100%;
+  }
+
+  .dropzone {
+    min-height: 150px;
+    padding: 1.5rem;
+  }
+
+  .dropzone-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .file-type-selector {
+    width: 100%;
+  }
+
+  .sem-tab {
+    flex: 1;
+  }
+}
+
+/* Dark mode adjustments */
+body.dark .coming-soon-banner {
+  background: var(--surface-container);
+}
+
+body.dark .coming-soon-banner:hover {
+  box-shadow: -4px 0 12px rgba(251, 191, 36, 0.1);
+}
+
+body.dark .dropzone {
+  background: var(--surface-container-low);
+}
+
+body.dark .dropzone:hover,
+body.dark .dropzone.dragging {
+  background: var(--surface-container);
+}
+
+body.dark .dropzone::before {
+  background: radial-gradient(circle at center, rgba(96, 165, 250, 0.05), transparent 70%);
+}

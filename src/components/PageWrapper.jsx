@@ -24,6 +24,14 @@ const PageWrapper = ({ children }) => {
     if (location.pathname.startsWith('/resources/year')) title = 'ResourceRIA | Subjects';
     if (location.pathname === '/gpa-calculator') title = 'ResourceRIA | GPA Calculator';
     if (location.pathname === '/bunk-calculator') title = 'ResourceRIA | Bunk Calculator';
+    if (location.pathname === '/explore') title = 'ResourceRIA | Explore';
+    if (location.pathname === '/leaderboard') title = 'ResourceRIA | Leaderboard';
+    if (location.pathname === '/contributors') title = 'ResourceRIA | Contributors';
+    if (location.pathname === '/upload') title = 'ResourceRIA | Upload Resources';
+    if (location.pathname === '/my-uploads') title = 'ResourceRIA | My Uploads';
+    if (location.pathname === '/badges') title = 'ResourceRIA | Badges';
+    if (location.pathname === '/scientific-calculator') title = 'ResourceRIA | Scientific Calculator';
+    if (location.pathname === '/contacts') title = 'ResourceRIA | Contacts';
     
     document.title = title;
   }, [location.pathname]);
