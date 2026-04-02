@@ -6,7 +6,7 @@ import "./RIAModal.css";
 
 const RIAModal = ({ subject, onClose }) => {
   const [messages, setMessages] = useState([
-    { role: "assistant", content: `Hi! I'm RIA ✨. I'm here to explain concepts, suggest analogies, and guide your learning for **${subject?.name || 'this subject'}**. What would you like to know?` }
+    { role: "assistant", content: subject?.name ? `Hi! I'm RIA ✨. I'm here to help you with **${subject.name}** or answer any other questions you have! What's on your mind?` : `Hi! I'm RIA ✨. I am your smart academic assistant and I can answer all your questions! What would you like to know?` }
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -35,7 +35,9 @@ const RIAModal = ({ subject, onClose }) => {
     setLoading(true);
 
     try {
-      const promptContext = `Context: The student is asking about the subject "${subject?.name || 'this subject'}". Ensure your explanation is simple, provides a real-world analogy if possible, and suggests related topics.\n\nStudent Query: ${userMessage}`;
+      const promptContext = subject?.name 
+        ? `Context: The user is currently studying the subject "${subject.name}". You may use this context if relevant, but answer exactly what the user asks without restricting yourself to this subject.\n\nUser Query: ${userMessage}`
+        : `User Query: ${userMessage}`;
       const response = await askRIA(promptContext);
       if (isMountedRef.current) {
         setMessages(prev => [...prev, { role: "assistant", content: response }]);
@@ -89,7 +91,7 @@ const RIAModal = ({ subject, onClose }) => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            placeholder={`Ask about ${subject?.name || 'this subject'}...`}
+            placeholder={subject?.name ? `Ask about ${subject.name} or anything else...` : `Ask RIA anything...`}
             disabled={loading}
           />
           <button onClick={handleSend} disabled={loading || !input.trim()} className="btn-primary">

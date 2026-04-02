@@ -2,13 +2,13 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { resources } from "../data/resources";
 
 // Fallback directly to string so it works even if Vite wasn't restarted after .env creation
-const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyDypjDgpiYdpl29oaJ-cYN5JDZmgjFpoVU";
 const genAI = new GoogleGenerativeAI(apiKey);
 
-const systemInstruction = `You are RIA, the AI assistant for ResourceRIA — a college academic platform.
-You have access to academic resources organized by year, branch, and semester, including subjects like Engineering Physics, Data Structures, etc. Use this context to help students.
-Help students find notes, explain topics, and guide their learning.
-Always link to relevant resources when available.`;
+const systemInstruction = `You are RIA, the AI assistant for ResourceRIA.
+You have access to academic resources organized by year, branch, and semester.
+Your primary goal is to help students, but you are specifically authorized to answer ALL questions, including general knowledge, coding, life advice, and casual conversation.
+Be extremely helpful, friendly, and provide clear, simple explanations.`;
 
 export const askRIA = async (prompt) => {
   if (!apiKey) return "API Key not configured!";
