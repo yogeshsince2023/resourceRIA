@@ -117,6 +117,7 @@ const GPACalculator = () => {
                   value={sub.name}
                   onChange={(e) => updateSubject(sub.id, 'name', e.target.value)}
                   className="gpa-input"
+                  aria-label="Subject Name"
                 />
                 <input 
                   type="number" 
@@ -124,11 +125,13 @@ const GPACalculator = () => {
                   value={sub.credits}
                   onChange={(e) => updateSubject(sub.id, 'credits', e.target.value)}
                   className="gpa-input"
+                  aria-label="Credits"
                 />
                 <select 
                   value={sub.grade}
                   onChange={(e) => updateSubject(sub.id, 'grade', e.target.value)}
                   className="gpa-select"
+                  aria-label="Grade"
                 >
                   {Object.keys(GRADE_POINTS).map(g => (
                     <option key={g} value={g}>{g}</option>
@@ -173,6 +176,7 @@ const GPACalculator = () => {
                     value={sem.sgpa}
                     onChange={(e) => updatePrevSem(sem.id, 'sgpa', e.target.value)}
                     className="gpa-input"
+                    aria-label={`Previous Semester ${i + 1} SGPA`}
                   />
                   <input 
                     type="number" 
@@ -180,6 +184,7 @@ const GPACalculator = () => {
                     value={sem.credits}
                     onChange={(e) => updatePrevSem(sem.id, 'credits', e.target.value)}
                     className="gpa-input"
+                    aria-label={`Previous Semester ${i + 1} Total Credits`}
                   />
                   <button onClick={() => removePrevSem(sem.id)} className="icon-btn danger" aria-label="Remove semester">
                     <Trash2 size={18} />

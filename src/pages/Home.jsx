@@ -12,6 +12,11 @@ const Home = () => {
           RESOURCE<span className="highlight">RIA</span>
         </h1>
         <p className="hero-subtitle">Your one-stop hub for notes, PYQs, AI tools & learning roadmaps</p>
+        <div style={{ marginTop: '2rem' }}>
+          <Link to="/resources" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+            Browse Resources <ArrowRight size={18} />
+          </Link>
+        </div>
       </section>
 
       {/* About blurb for first-time visitors */}

@@ -46,7 +46,7 @@ const Footer = () => {
           <h4>Platform</h4>
           <Link to="/contributors">Contributors</Link>
           <Link to="/leaderboard">Leaderboard</Link>
-          <Link to="/badges">Badges</Link>
+          <Link to="/contacts">Contacts</Link>
           <a href="https://forms.gle/5GZdMcTCzEo92fz28" target="_blank" rel="noopener noreferrer">Contribute</a>
         </div>
       </div>

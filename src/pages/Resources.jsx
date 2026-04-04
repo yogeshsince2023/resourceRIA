@@ -10,10 +10,17 @@ const Resources = () => {
       </h1>
       
       <div className="grid-container year-grid-2x2">
-        {Object.entries(resources).map(([yearKey, yearData]) => {
+        {Object.entries(resources).map(([yearKey, yearData], index) => {
           const count = Object.keys(yearData.branches).length;
+          const borderColors = ['#14b8a6', '#3b82f6', '#a855f7', '#6366f1'];
+          const borderColor = borderColors[index % borderColors.length];
           return (
-            <Link to={`/resources/${yearKey}`} key={yearKey} className="card year-detail-card">
+            <Link 
+              to={`/resources/${yearKey}`} 
+              key={yearKey} 
+              className="card year-detail-card hover-lift"
+              style={{ borderLeft: `6px solid ${borderColor}` }}
+            >
               <h2>{yearData.label}</h2>
               <p className="branch-count-badge">{count} {count === 1 ? 'Branch' : 'Branches'}</p>
               <ul className="branch-list">

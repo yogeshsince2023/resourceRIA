@@ -7,6 +7,7 @@ import './Navbar.css';
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [learnDropdownOpen, setLearnDropdownOpen] = useState(false);
   const [isDark, setIsDark] = useState(() => {
     return localStorage.getItem('theme') === 'dark';
   });
@@ -14,6 +15,8 @@ const Navbar = () => {
   const location = useLocation();
   const dropdownBtnRef = useRef(null);
   const dropdownMenuRef = useRef(null);
+  const learnBtnRef = useRef(null);
+  const learnMenuRef = useRef(null);
 
   // Detect OS for shortcut label
   const isMac = typeof navigator !== 'undefined' && /Mac|iPod|iPhone|iPad/.test(navigator.userAgent);
@@ -50,15 +53,24 @@ const Navbar = () => {
       ) {
         setDropdownOpen(false);
       }
+      if (
+        learnBtnRef.current &&
+        !learnBtnRef.current.contains(e.target) &&
+        learnMenuRef.current &&
+        !learnMenuRef.current.contains(e.target)
+      ) {
+        setLearnDropdownOpen(false);
+      }
     };
 
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
         setDropdownOpen(false);
+        setLearnDropdownOpen(false);
       }
     };
 
-    if (dropdownOpen) {
+    if (dropdownOpen || learnDropdownOpen) {
       document.addEventListener('mousedown', handleClickOutside);
       document.addEventListener('keydown', handleEscape);
     }
@@ -73,6 +85,7 @@ const Navbar = () => {
   useEffect(() => {
     setMenuOpen(false);
     setDropdownOpen(false);
+    setLearnDropdownOpen(false);
   }, [location.pathname]);
 
   const toggleTheme = () => {
@@ -82,10 +95,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Resources', path: '/resources' },
-    { name: 'Explore', path: '/explore' },
-    { name: 'Languages', path: '/languages' },
-    { name: 'Roadmaps', path: '/roadmaps' },
-    { name: 'Contacts', path: '/contacts' }
+    { name: 'Explore', path: '/explore' }
   ];
 
   const isActive = (path) => {
@@ -113,9 +123,26 @@ const Navbar = () => {
           
           <div className="nav-dropdown">
             <button 
+              ref={learnBtnRef} 
+              className="dropdown-btn" 
+              onClick={() => { setLearnDropdownOpen(!learnDropdownOpen); setDropdownOpen(false); }} 
+              aria-expanded={learnDropdownOpen} 
+              aria-controls="learn-menu"
+              aria-haspopup="true"
+            >
+              Learn ▼
+            </button>
+            <div ref={learnMenuRef} className={`dropdown-content ${learnDropdownOpen ? 'open' : ''}`} id="learn-menu" role="menu">
+              <Link to="/languages" role="menuitem">Languages</Link>
+              <Link to="/roadmaps" role="menuitem">Roadmaps</Link>
+            </div>
+          </div>
+          
+          <div className="nav-dropdown">
+            <button 
               ref={dropdownBtnRef} 
               className="dropdown-btn" 
-              onClick={() => setDropdownOpen(!dropdownOpen)} 
+              onClick={() => { setDropdownOpen(!dropdownOpen); setLearnDropdownOpen(false); }} 
               aria-expanded={dropdownOpen} 
               aria-controls="tools-menu"
               aria-haspopup="true"

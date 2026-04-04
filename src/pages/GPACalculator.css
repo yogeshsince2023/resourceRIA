@@ -75,7 +75,7 @@
   gap: 0.5rem;
   background-color: transparent;
   color: var(--primary-blue);
-  border: 1px dashed var(--primary-blue);
+  border: 2px dashed var(--primary-blue);
   border-radius: 8px;
   padding: 0.75rem 1rem;
   font-weight: 600;

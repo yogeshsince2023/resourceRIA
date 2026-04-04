@@ -43,7 +43,8 @@ body.dark .hero::before {
 
 .hero-subtitle {
   font-size: 1.15rem;
-  color: var(--on-surface-variant);
+  color: var(--on-surface);
+  opacity: 0.8;
   margin-top: 0.75rem;
   max-width: 600px;
   margin-left: auto;
@@ -264,6 +265,7 @@ body.dark .hero::before {
   text-decoration: none;
   font-weight: 700;
   font-size: 0.9rem;
+  white-space: nowrap;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease;
 }
