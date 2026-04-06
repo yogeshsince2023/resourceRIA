@@ -21,7 +21,7 @@ export const languages = [
     title: "Java",
     duration: "12 Weeks",
     topics: ["OOP", "JVM", "Collections", "Exception Handling", "Multithreading", "Spring"],
-    url: "https://roadmap.sh/java"
+    url: "https://drive.google.com/file/d/1YnyqSrU3ZZX4lH2kOAgt5DgXeRYqHooN/view?usp=drive_link"
   },
   {
     title: "TypeScript",
@@ -57,7 +57,7 @@ export const languages = [
     title: "SQL",
     duration: "6 Weeks",
     topics: ["Queries", "Joins", "Indexing", "Normalization", "Transactions", "Views"],
-    url: "https://roadmap.sh/sql"
+    url: "https://drive.google.com/file/d/1GNBCqbh-fhyP3iFO7NJKf2fcVE1ZPaJv/view?usp=drive_link"
   },
   {
     title: "R Language",

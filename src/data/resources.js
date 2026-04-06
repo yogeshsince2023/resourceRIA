@@ -187,7 +187,7 @@ export const resources = {
             { name: "PCCCS402 — Computer Organization & Architecture", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
             { name: "PCCCS403 — Artificial Intelligence & Machine Learning", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
             { name: "PCCCS404 — Design & Analysis of Algorithms", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
-            { name: "PCCCS405 — Advanced Programming (OOP)", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PCCCS405 — Advanced Programming (OOP)", links: [{ type: 'notes', url: 'https://drive.google.com/file/d/1_j7guQZdReJ9GzMdFhqRscXq9rnquBya/view?usp=drive_link' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
             { name: "ESP401 — Essential Studies for Professionals-IV", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] }
           ]
         }
@@ -201,8 +201,8 @@ export const resources = {
             { name: "Electronics Engineering", links: [{ type: "notes", url: "#" }, { type: "pyq", url: "#" }] }
           ],
           "Semester 4": [
-            { name: "Operating Systems", links: [{ type: "notes", url: "#" }] },
-            { name: "Object Oriented Programming", links: [{ type: "video", url: "#" }, { type: "notes", url: "#" }] },
+            { name: "Operating Systems", links: [{ type: "notes", url: "https://drive.google.com/file/d/1YHJktzBS2s2Q0A93jBuo6kbbXlSU1b_H/view?usp=drive_link" }] },
+            { name: "Object Oriented Programming", links: [{ type: "video", url: "#" }, { type: "notes", url: "https://drive.google.com/file/d/1_j7guQZdReJ9GzMdFhqRscXq9rnquBya/view?usp=drive_link" }] },
             { name: "Computer Organization", links: [{ type: "notes", url: "#" }] },
             { name: "Engineering Mathematics III", links: [{ type: "pyq", url: "#" }, { type: "notes", url: "#" }] }
           ]
@@ -216,8 +216,8 @@ export const resources = {
             { name: "Discrete Mathematics", links: [{ type: "notes", url: "#" }] }
           ],
           "Semester 4": [
-            { name: "Operating Systems", links: [{ type: "notes", url: "#" }] },
-            { name: "Computer Networks", links: [{ type: "notes", url: "#" }] }
+            { name: "Operating Systems", links: [{ type: "notes", url: "https://drive.google.com/file/d/1YHJktzBS2s2Q0A93jBuo6kbbXlSU1b_H/view?usp=drive_link" }] },
+            { name: "Computer Networks", links: [{ type: "notes", url: "https://drive.google.com/file/d/10w8fRrRdaLIL1IXDaX6ufQJaaYYdIcKR/view?usp=drive_link" }] }
           ]
         }
       }
@@ -229,7 +229,7 @@ export const resources = {
       "Computer Science & Engineering": {
         semesters: {
           "Semester 5": [
-            { name: "PCCCS601 — Computer Networks", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PCCCS601 — Computer Networks", links: [{ type: 'notes', url: 'https://drive.google.com/file/d/10w8fRrRdaLIL1IXDaX6ufQJaaYYdIcKR/view?usp=drive_link' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
             { name: "PECCS601 — Introductory Cyber Security", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
             { name: "PECCS602B — Soft Computing", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
             { name: "PECCS603B — Natural Language Processing", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
@@ -237,7 +237,7 @@ export const resources = {
             { name: "ESP(CS)601 — Essential Studies for Professionals-VI", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] }
           ],
           "Semester 6": [
-            { name: "PCCCS601 — Computer Networks", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PCCCS601 — Computer Networks", links: [{ type: 'notes', url: 'https://drive.google.com/file/d/10w8fRrRdaLIL1IXDaX6ufQJaaYYdIcKR/view?usp=drive_link' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
             { name: "PECCS601 — Introductory Cyber Security", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
             { name: "PECCS602B — Soft Computing", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
             { name: "PECCS603B — Natural Language Processing", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
@@ -249,7 +249,7 @@ export const resources = {
       "Computer Engineering": {
         semesters: {
           "Semester 5": [
-            { name: "Database Management Systems", links: [{ type: "notes", url: "#" }] },
+            { name: "Database Management Systems", links: [{ type: "notes", url: "https://drive.google.com/file/d/1vmLWJSJStfXRdAwtMFz1Kpj2Nnj7b9hY/view?usp=drive_link" }] },
             { name: "Theory of Computation", links: [{ type: "pyq", url: "#" }, { type: "video", url: "#" }] },
             { name: "Web Technology", links: [{ type: "notes", url: "#" }] }
           ],
