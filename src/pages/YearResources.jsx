@@ -33,12 +33,12 @@ const YearResources = () => {
 
   const getIcon = (type) => {
     switch (type.toLowerCase()) {
-      case 'notes': return <FileText size={16} />;
+      case 'notes': return <FileText size={20} />;
       case 'video':
-      case 'youtube': return <PlayCircle size={16} />;
-      case 'drive': return <HardDrive size={16} />;
-      case 'pyq': return <FileText size={16} />;
-      default: return <ExternalLink size={16} />;
+      case 'youtube': return <PlayCircle size={20} />;
+      case 'drive': return <HardDrive size={20} />;
+      case 'pyq': return <FileText size={20} />;
+      default: return <ExternalLink size={20} />;
     }
   };
 
@@ -56,20 +56,7 @@ const YearResources = () => {
         <h1 className="heading-two-tone">Resources <span className="highlight">{yearData.label}</span></h1>
         
         <div className="filter-controls">
-          <select 
-            className="branch-select"
-            value={selectedBranch}
-            onChange={(e) => {
-              const newBranch = e.target.value;
-              const newBranchObj = yearData.branches[newBranch];
-              const sems = newBranchObj ? Object.keys(newBranchObj.semesters || {}) : [];
-              setSearchParams({ branch: newBranch, sem: sems[0] || '' }, { replace: true });
-            }}
-          >
-            {branches.map(branchName => (
-              <option key={branchName} value={branchName}>{branchName}</option>
-            ))}
-          </select>
+          {/* Branch selection removed as per request */}
 
           {availableSemesters.length > 0 && (
             <div className="semester-tabs">

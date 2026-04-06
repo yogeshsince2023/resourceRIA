@@ -5,24 +5,21 @@ export const resources = {
       "Computer Science & Engineering": {
         semesters: {
           "Semester 1": [
-            { name: "Physics", links: [] },
-            { name: "Mathematics - I", links: [] },
-            { name: "Biology for Engineers", links: [] },
-            { name: "Basic Electrical Engineering", links: [] },
-            { name: "Engineering Mechanics - I", links: [] },
-            { name: "Engineering Graphics & Design", links: [] },
-            { name: "Physics Laboratory", links: [] },
-            { name: "Basic Electrical Engineering Laboratory", links: [] }
+            { name: "BSCPH101 — Physics", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "BSCM103 — Mathematics-I", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "BSCBE104 — Biology for Engineers", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "ESCEE101 — Basic Electrical Engineering", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "ESCME102 — Engineering Mechanics-I", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "ESP101 — Essential Studies for Professionals-I", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] }
           ],
           "Semester 2": [
-            { name: "Chemistry", links: [] },
-            { name: "Mathematics-II", links: [] },
-            { name: "Programming for Problem Solving", links: [] },
-            { name: "Engineering Mechanics II", links: [] },
-            { name: "English", links: [] },
-            { name: "Chemistry Laboratory", links: [] },
-            { name: "Programming for Problem Solving Laboratory", links: [] },
-            { name: "Workshop/Manufacturing Practices", links: [] }
+            { name: "BSCCH201 — Chemistry", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "BSCM203 — Mathematics-II", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "ESCCS201 — Programming for Problem Solving", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "ESCME202 — Engineering Mechanics-II", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "HSMC201 — English", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "ESP201 — Essential Studies for Professionals-II", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "MOOCs — MOOC Course", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] }
           ]
         }
       },
@@ -178,30 +175,20 @@ export const resources = {
       "Computer Science & Engineering": {
         semesters: {
           "Semester 3": [
-            { name: "Mathematics-III", links: [] },
-            { name: "Analog Electronic Circuit", links: [] },
-            { name: "Digital Electronics", links: [] },
-            { name: "Data Structure & Algorithms", links: [] },
-            { name: "Humanities-I (Principles of Management)", links: [] },
-            { name: "IT Workshop (MATLAB)", links: [] },
-            { name: "Analog Electronic Circuits Lab", links: [] },
-            { name: "Digital Electronics Lab", links: [] },
-            { name: "Data Structure & Algorithm Laboratory", links: [] },
-            { name: "Information Theory for Cyber Security", links: [] }
+            { name: "BSCM301 — Mathematics-III", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "ESC301 — Analog Electronic Circuit", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "ESC302 — Digital Electronics", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PCCCS301 — Data Structures & Algorithms", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "HSMCS301 — Principles of Management", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "ESP301 — Essential Studies for Professionals-III", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] }
           ],
           "Semester 4": [
-            { name: "Discrete Mathematics", links: [] },
-            { name: "Computer Organization & Architecture", links: [] },
-            { name: "Artificial Intelligence & Machine Learning", links: [] },
-            { name: "Design & Analysis of Algorithms", links: [] },
-            { name: "Advanced Programming (OOP)", links: [] },
-            { name: "Management I (Finance & Accounting)", links: [] },
-            { name: "Data Analytics", links: [] },
-            { name: "Computer Organization & Architecture Laboratory", links: [] },
-            { name: "AI & Machine Learning Laboratory", links: [] },
-            { name: "Design & Analysis of Algorithms Laboratory", links: [] },
-            { name: "Advanced Programming (OOP) Laboratory", links: [] },
-            { name: "Information Theory for Cyber Security", links: [] }
+            { name: "BSCM401 — Discrete Mathematics", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PCCCS402 — Computer Organization & Architecture", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PCCCS403 — Artificial Intelligence & Machine Learning", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PCCCS404 — Design & Analysis of Algorithms", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PCCCS405 — Advanced Programming (OOP)", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "ESP401 — Essential Studies for Professionals-IV", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] }
           ]
         }
       },
@@ -239,6 +226,26 @@ export const resources = {
   year3: {
     label: "Year 3",
     branches: {
+      "Computer Science & Engineering": {
+        semesters: {
+          "Semester 5": [
+            { name: "PCCCS601 — Computer Networks", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PECCS601 — Introductory Cyber Security", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PECCS602B — Soft Computing", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PECCS603B — Natural Language Processing", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PCCCS605 — Cloud Computing & IoT", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "ESP(CS)601 — Essential Studies for Professionals-VI", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] }
+          ],
+          "Semester 6": [
+            { name: "PCCCS601 — Computer Networks", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PECCS601 — Introductory Cyber Security", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PECCS602B — Soft Computing", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PECCS603B — Natural Language Processing", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "PCCCS605 — Cloud Computing & IoT", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] },
+            { name: "ESP(CS)601 — Essential Studies for Professionals-VI", links: [{ type: 'notes', url: '#' }, { type: 'pyq', url: '#' }, { type: 'video', url: '#' }] }
+          ]
+        }
+      },
       "Computer Engineering": {
         semesters: {
           "Semester 5": [

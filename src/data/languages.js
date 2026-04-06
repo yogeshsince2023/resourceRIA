@@ -1,11 +1,5 @@
 export const languages = [
   {
-    title: "C Programming",
-    duration: "8 Weeks",
-    topics: ["Variables", "Data Types", "Pointers", "Arrays", "Functions", "File I/O"],
-    url: "https://roadmap.sh/c"
-  },
-  {
     title: "C++ Programming",
     duration: "10 Weeks",
     topics: ["OOP", "Classes & Objects", "STL", "Templates", "Pointers", "Memory Mgmt"],

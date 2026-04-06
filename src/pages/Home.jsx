@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Calculator, BarChart3, BookOpen, Sparkles, ArrowRight, Compass, Users, Brain } from 'lucide-react';
+import { Calculator, BarChart3, BookOpen, Sparkles, ArrowRight, Compass, Users, Brain, GraduationCap, Layers, Award } from 'lucide-react';
 import { resources } from '../data/resources';
 import { contributors } from '../data/mockContributors';
 import './Home.css';
@@ -39,12 +39,29 @@ const Home = () => {
         <div className="container">
           <h2>Browse by Year</h2>
           <div className="grid-container year-grid">
-            {Object.entries(resources).map(([key, data]) => {
-              const count = Object.keys(data.branches).length;
+            {Object.entries(resources).map(([key, data], index) => {
+              const borderColors = ['#14b8a6', '#3b82f6', '#a855f7', '#6366f1'];
+              const borderColor = borderColors[index % borderColors.length];
+              
+              const getIcon = (idx) => {
+                switch(idx % 4) {
+                  case 0: return <GraduationCap size={40} />;
+                  case 1: return <BookOpen size={40} />;
+                  case 2: return <Layers size={40} />;
+                  case 3: return <Award size={40} />;
+                  default: return <GraduationCap size={40} />;
+                }
+              };
+
               return (
-                <Link to={`/resources/${key}`} className="card year-card" key={key}>
-                  <h3>{data.label}</h3>
-                  <p className="branch-count">{count} {count === 1 ? 'Branch' : 'Branches'}</p>
+                <Link 
+                  to={`/resources/${key}`} 
+                  className="card year-card hover-lift" 
+                  key={key}
+                  style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', padding: '1.5rem', textAlign: 'center' }}
+                >
+                  <div style={{ color: borderColor }}>{getIcon(index)}</div>
+                  <h3 style={{ margin: 0 }}>{data.label}</h3>
                 </Link>
               );
             })}

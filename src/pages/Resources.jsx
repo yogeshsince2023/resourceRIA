@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { GraduationCap, BookOpen, Layers, Award } from 'lucide-react';
 import { resources } from '../data/resources';
 import './Resources.css';
 
@@ -11,26 +12,38 @@ const Resources = () => {
       
       <div className="grid-container year-grid-2x2">
         {Object.entries(resources).map(([yearKey, yearData], index) => {
-          const count = Object.keys(yearData.branches).length;
           const borderColors = ['#14b8a6', '#3b82f6', '#a855f7', '#6366f1'];
           const borderColor = borderColors[index % borderColors.length];
+          
+          const getIcon = (idx) => {
+            switch(idx % 4) {
+              case 0: return <GraduationCap size={48} strokeWidth={1.5} />;
+              case 1: return <BookOpen size={48} strokeWidth={1.5} />;
+              case 2: return <Layers size={48} strokeWidth={1.5} />;
+              case 3: return <Award size={48} strokeWidth={1.5} />;
+              default: return <GraduationCap size={48} strokeWidth={1.5} />;
+            }
+          };
+
           return (
             <Link 
               to={`/resources/${yearKey}`} 
               key={yearKey} 
               className="card year-detail-card hover-lift"
-              style={{ borderLeft: `6px solid ${borderColor}` }}
+              style={{ 
+                borderLeft: `6px solid ${borderColor}`, 
+                display: 'flex', 
+                flexDirection: 'column',
+                justifyContent: 'center', 
+                alignItems: 'center', 
+                minHeight: '200px',
+                gap: '1rem'
+              }}
             >
-              <h2>{yearData.label}</h2>
-              <p className="branch-count-badge">{count} {count === 1 ? 'Branch' : 'Branches'}</p>
-              <ul className="branch-list">
-                {Object.keys(yearData.branches).slice(0, 3).map((branch, idx) => (
-                  <li key={idx}>{branch}</li>
-                ))}
-                {Object.keys(yearData.branches).length > 3 && (
-                  <li>+ {Object.keys(yearData.branches).length - 3} more</li>
-                )}
-              </ul>
+              <div style={{ color: borderColor, opacity: 0.8 }}>
+                {getIcon(index)}
+              </div>
+              <h2 style={{ margin: 0 }}>{yearData.label}</h2>
             </Link>
           );
         })}
