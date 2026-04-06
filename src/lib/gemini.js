@@ -1,8 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { resources } from "../data/resources";
 
-// Fallback directly to string so it works even if Vite wasn't restarted after .env creation
-const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyDypjDgpiYdpl29oaJ-cYN5JDZmgjFpoVU";
+// Vercel removes the VITE_ prefix, so we check GEMINI_API_KEY first (which we whitelisted in vite.config.js)
+const apiKey = import.meta.env.GEMINI_API_KEY || import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyDypjDgpiYdpl29oaJ-cYN5JDZmgjFpoVU";
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const systemInstruction = `You are RIA, the AI assistant for ResourceRIA.

@@ -12,20 +12,12 @@ import {
   BarChart3, 
   Brain, 
   Cpu, 
-  FileSearch, 
   FileText,
   Terminal,
-  CpuIcon,
-  SearchIcon,
   Sparkles,
-  MessageCircle,
   ArrowRight,
-  Monitor,
-  Database,
-  Smartphone,
-  Palette,
-  Settings,
-  Scale
+  Wrench,
+  ChevronRight
 } from 'lucide-react';
 import { resources } from '../data/resources';
 import { languages as langData } from '../data/languages';
@@ -72,13 +64,13 @@ const Explore = () => {
   }, []);
 
   // 2. Real-time Filtering Logic
-  const filteredLanguages = langData.filter(lang => 
+  const filteredLanguages = Array.isArray(langData) ? langData.filter(lang => 
     lang.title.toLowerCase().includes(searchQuery.toLowerCase())
-  ).slice(0, 9); // Limit to top 9 for the grid
+  ).slice(0, 9) : []; 
 
-  const filteredRoadmaps = roadmapData.filter(map => 
+  const filteredRoadmaps = Array.isArray(roadmapData) ? roadmapData.filter(map => 
     map.title.toLowerCase().includes(searchQuery.toLowerCase())
-  ).slice(0, 6); // Limit to top 6 for the grid
+  ).slice(0, 6) : [];
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -105,7 +97,7 @@ const Explore = () => {
     { label: "GPA Calculator", path: "/gpa-calculator", icon: <Calculator /> },
     { label: "Bunk Calculator", path: "/bunk-calculator", icon: <BarChart3 /> },
     { label: "Scientific Calc", path: "/scientific-calculator", icon: <Calculator /> },
-    { label: "Unit Converter", path: "/unit-converter", icon: <Scale />, comingSoon: true }
+    { label: "Unit Converter", path: "/unit-converter", icon: <Wrench />, comingSoon: true }
   ];
 
   return (
@@ -170,7 +162,7 @@ const Explore = () => {
                 style={{ borderLeft: `6px solid ${['#14b8a6', '#3b82f6', '#a855f7', '#6366f1'][idx % 4]}` }}
               >
                 <div className="card-large-icon">
-                  {[ <GraduationCap />, <BookOpen />, <Layers />, <Award /> ][idx % 4]}
+                  {[ <GraduationCap size={32}/>, <BookOpen size={32}/>, <Layers size={32}/>, <Award size={32}/> ][idx % 4]}
                 </div>
                 <h3>{resources[key].label}</h3>
                 <p>View semesters & notes</p>
@@ -193,7 +185,7 @@ const Explore = () => {
             {filteredLanguages.length > 0 ? (
               filteredLanguages.map((lang, idx) => (
                 <Link to="/languages" key={idx} className="explore-card-item hover-lift">
-                  <div className="card-icon-small"><Terminal /></div>
+                  <div className="card-icon-small"><Terminal size={20}/></div>
                   <div className="card-text">
                     <h4>{lang.title}</h4>
                   </div>
@@ -217,7 +209,7 @@ const Explore = () => {
             {filteredRoadmaps.length > 0 ? (
               filteredRoadmaps.map((road, idx) => (
                 <Link to="/roadmaps" key={idx} className="explore-card-item hover-lift">
-                  <div className="card-icon-small"><Map /></div>
+                  <div className="card-icon-small"><Map size={20}/></div>
                   <div className="card-text">
                     <h4>{road.title}</h4>
                     <span>Curated path &rarr;</span>
@@ -257,41 +249,41 @@ const Explore = () => {
         <section id="ai" ref={sectionsRef.ai} className="explore-section">
           <div className="explore-section-header">
             <div className="title-with-icon">
-              <CpuIcon size={28} className="icon-primary" />
+              <Cpu size={28} className="icon-primary" />
               <h2>AI Powered Hub</h2>
             </div>
           </div>
           <div className="grid-responsive-2-3">
             <button onClick={() => setIsAIModalOpen(true)} className="explore-card-ai hover-lift">
-              <div className="ai-icon-bg"><MessageCircle /></div>
+              <div className="ai-icon-bg"><Brain size={24}/></div>
               <div className="ai-text">
                 <h4>Ask RIA</h4>
                 <p>Your 24/7 Academic Assistant</p>
               </div>
             </button>
             <Link to="/quiz" className="explore-card-ai hover-lift">
-              <div className="ai-icon-bg"><Brain /></div>
+              <div className="ai-icon-bg"><Brain size={24}/></div>
               <div className="ai-text">
                 <h4>Smart AI Quiz</h4>
                 <p>Generate quizzes from notes</p>
               </div>
             </Link>
             <Link to="/roadmap-generator" className="explore-card-ai hover-lift">
-              <div className="ai-icon-bg"><Sparkles /></div>
+              <div className="ai-icon-bg"><Sparkles size={24}/></div>
               <div className="ai-text">
                 <h4>AI Roadmap Generator</h4>
                 <p>Personalized learning paths</p>
               </div>
             </Link>
             <Link to="/notes-summarizer" className="explore-card-ai hover-lift">
-              <div className="ai-icon-bg"><FileText /></div>
+              <div className="ai-icon-bg"><FileText size={24}/></div>
               <div className="ai-text">
                 <h4>Notes Summarizer</h4>
                 <p>Summarize complex PDF notes</p>
               </div>
             </Link>
             <Link to="/pyq-analyzer" className="explore-card-ai hover-lift">
-              <div className="ai-icon-bg"><FileSearch /></div>
+              <div className="ai-icon-bg"><FileText size={24}/></div>
               <div className="ai-text">
                 <h4>AI PYQ Analyzer</h4>
                 <p>Weightage analysis of past papers</p>

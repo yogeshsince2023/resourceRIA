@@ -16,6 +16,7 @@ NProgress.configure({ showSpinner: false, trickleSpeed: 200, minimum: 0.1 });
 // Lazy-loaded pages — code-splitting for reduced initial bundle
 const Home = lazy(() => import('./pages/Home'));
 const Resources = lazy(() => import('./pages/Resources'));
+const Explore = lazy(() => import('./pages/Explore'));
 const YearResources = lazy(() => import('./pages/YearResources'));
 const Languages = lazy(() => import('./pages/Languages'));
 const Roadmaps = lazy(() => import('./pages/Roadmaps'));
@@ -78,6 +79,7 @@ function App() {
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
               <Route path="/resources" element={<PageWrapper><Resources /></PageWrapper>} />
+              <Route path="/explore" element={<PageWrapper><Explore /></PageWrapper>} />
               <Route path="/resources/:year" element={<PageWrapper><YearResources /></PageWrapper>} />
               <Route path="/languages" element={<PageWrapper><Languages /></PageWrapper>} />
               <Route path="/roadmaps" element={<PageWrapper><Roadmaps /></PageWrapper>} />
